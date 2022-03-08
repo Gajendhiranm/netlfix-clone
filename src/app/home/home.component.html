@@ -1,0 +1,16 @@
+
+<app-navbar></app-navbar>
+<h6 class="ml-4 p-3 mt-3 text-white">Popular on Netflix</h6>
+
+<ul class="d-flex  container-fluid">
+  <li *ngFor="let r of results" class="movie-list" >
+    <div class="m-2 p-2">
+      <img src="{{image_url}}{{r.poster_path}}" alt="" height="400" width="290">
+      <h6 class="text-center mt-2 text-white">{{r.name}}</h6>
+      
+       
+   
+    </div>
+   
+  </li>
+</ul>
