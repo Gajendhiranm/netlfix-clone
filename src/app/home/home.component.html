@@ -1,16 +1,52 @@
-
 <app-navbar></app-navbar>
-<h6 class="ml-4 p-3 mt-3 text-white">Popular on Netflix</h6>
+<div class="d-flex justify-content-between m-2 p-2">
+  <div>
 
-<ul class="d-flex  container-fluid">
-  <li *ngFor="let r of results" class="movie-list" >
-    <div class="m-2 p-2">
-      <img src="{{image_url}}{{r.poster_path}}" alt="" height="400" width="290">
-      <h6 class="text-center mt-2 text-white">{{r.name}}</h6>
-      
-       
-   
-    </div>
-   
-  </li>
+    <h5 class="ml-4 p-3 mt-3 text-white">Popular on Netflix</h5>
+  </div>
+  
+<div class="d-flex  arrow">
+  <div>
+    <img
+      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      height="55"
+      width="55"
+      class="sliderArrow left"
+      (click)="handleclick('left')"
+    />
+  </div>
+  <div>
+    <img
+      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      height="55"
+      width="55"
+      class="sliderArrow right"
+      (click)="handleclick('right')"
+    />
+  </div>
+</div>
+</div>
+
+
+<ul class="d-flex container-fluid">
+  <div class="d-flex justify-content-between wrapper">
+    
+  
+    <li *ngFor="let r of results" class="movie-list">
+     
+      <div class="m-2 p-2" >
+        <img
+          src="{{ image_url }}{{ r.poster_path }}"
+          alt=""
+          height="400"
+          width="280"
+        />
+        <h6 class="text-center mt-2 text-white">{{ r.name }}</h6>
+      </div>
+
+    </li>
+  
+    
+  </div>
 </ul>
+
