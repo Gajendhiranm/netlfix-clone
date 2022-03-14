@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { HomeDataService } from '../home-data.service';
 
 @Component({
   selector: 'app-home',
@@ -9,36 +9,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   results: any = [];
+  actionResults: any =  [];
    image_url = `https://image.tmdb.org/t/p/original/`;
   basicUrl = "https://image.tmdb.org/t/p/original/";
-  constructor(  private http: HttpClient) { 
-      http.get<any>("https://api.themoviedb.org/3/discover/tv?api_key=0fc36919fff2603ac5d92fb95863f537")
-      .subscribe(
-         response => {
-        this.results = response.results;
-          console.log("movies results : ",this.results);
-         
-         }
-      )
-     
-      
-      
+  constructor( private homeData : HomeDataService) {    
   }
+
+
+ gethomeData = () => {
+  this.homeData.PopularData()
+  .subscribe(
+   response => {
+     this.results = response.results;
+      }
+  )
+ }
+
+ getActionMovies = () => {
+   this.homeData.ActionMovies()
+   .subscribe(
+    response => {
+      this.actionResults= response.results;
+      console.log(response.results);
+       }
+   )
+ }
 
 
   handleclick(direction : any){
-   var a = document.getElementsByClassName("movie-list");
-   console.log(a);
-  
-   
+   console.log(direction);
   }
 
 
 
-  ngOnInit(): void {
-    
-   // console.log(this.results);
-    
+  ngOnInit(): void { 
+    this.gethomeData();
+    this.getActionMovies();
   }
 
 }

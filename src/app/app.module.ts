@@ -11,6 +11,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { TrendingComponent } from './trending/trending.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { NavbarComponent } from './navbar/navbar.component';
+// import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    
+    // NgxSkeletonLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeDataService {
-
-  constructor() { }
+  results: any = [];
+  constructor(private http: HttpClient) { }
    
+  PopularData = () => {
+    return this.http.get<any>("https://api.themoviedb.org/3/discover/tv?api_key=0fc36919fff2603ac5d92fb95863f537");
+   }
 
-  // homeData = async() => {
-  //   const data = await fetch('https://api.themoviedb.org/3/discover/tv?api_key=0fc36919fff2603ac5d92fb95863f537')
-  //   .then(response => response.json())
-  //   .then(data => this.datas=[...data]);
+  ActionMovies = () => {
+    return this.http.get<any>("https://api.themoviedb.org/3/discover/movie?api_key=0fc36919fff2603ac5d92fb95863f537&with_genres=28")
+  }
 
-  //   console.log(this.datas);
-  // }
+
+
 
 }
