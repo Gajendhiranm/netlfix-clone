@@ -25,11 +25,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
+    // NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'This item is actually loading...' }),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    // NgxSkeletonLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

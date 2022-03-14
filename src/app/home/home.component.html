@@ -77,20 +77,22 @@
 </div>
 </div>
 
+<ngx-skeleton-loader count="5" appearance="facebook">
+  <ul class="d-flex container">
+    <div class="d-flex justify-content-between wrapper">
+      <li *ngFor="let r of actionResults" class="movie-list">
+        <div class="m-2 p-2" >
+          <img
+            src="{{ image_url }}{{ r.poster_path }}"
+            alt=""
+            height="400"
+            width="280"
+          />
+          <h6 class="text-center mt-2 text-white">{{ r.name }}</h6>
+        </div>
+      </li>  
+    </div>
+  </ul>
+</ngx-skeleton-loader>
 
-<ul class="d-flex container">
-  <div class="d-flex justify-content-between wrapper">
-    <li *ngFor="let r of actionResults" class="movie-list">
-      <div class="m-2 p-2" >
-        <img
-          src="{{ image_url }}{{ r.poster_path }}"
-          alt=""
-          height="400"
-          width="280"
-        />
-        <h6 class="text-center mt-2 text-white">{{ r.name }}</h6>
-      </div>
-    </li>  
-  </div>
-</ul>
 
