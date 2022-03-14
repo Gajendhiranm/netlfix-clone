@@ -4,37 +4,38 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MoviesComponent } from './movies/movies.component';
 import { SeriesComponent } from './series/series.component';
+import { TrendingComponent } from './trending/trending.component';
 
 const routes: Routes = [
   {
-    path:"login",
-    component:LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path:"home",
-    component:HomeComponent
+    path: 'home',
+    component: HomeComponent,
   },
   {
-    path:"series",
-    component:SeriesComponent,
+    path: 'series',
+    component: SeriesComponent,
   },
   {
-    path:"movies",
-    component:MoviesComponent
+    path: 'movies',
+    component: MoviesComponent,
   },
   {
-    path:"trending",
-    component:MoviesComponent
+    path: 'trending',
+    component: TrendingComponent,
   },
   {
-    path:"favorites",
-    component:MoviesComponent
+    path: 'favorites',
+    component: MoviesComponent,
   },
-  { path: '',   redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

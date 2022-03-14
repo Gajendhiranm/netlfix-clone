@@ -15,10 +15,6 @@ export class LoginComponent implements OnInit {
   onSubmit(value : any){
     console.log(value);
     this.route.navigate(['/home']);
-    // let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // if(!emailRegex.test(value["email"]) && value.password.length >= 4){
-       
-    // }
-  
+   
   }
 }
