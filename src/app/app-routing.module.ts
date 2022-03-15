@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { MoviesComponent } from './movies/movies.component';
 import { SeriesComponent } from './series/series.component';
 import { TrendingComponent } from './trending/trending.component';
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'favorites',
     component: MoviesComponent,
+  },
+  {
+    path: ':id',
+    component: MoviedetailsComponent,
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];

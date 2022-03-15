@@ -11,8 +11,10 @@ import { MoviesComponent } from './movies/movies.component';
 import { TrendingComponent } from './trending/trending.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { NavbarComponent } from './navbar/navbar.component';
-// import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//  import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,16 +24,20 @@ import { NavbarComponent } from './navbar/navbar.component';
     MoviesComponent,
     TrendingComponent,
     FavoritesComponent,
-    NavbarComponent
+    NavbarComponent,
+    MoviedetailsComponent,
   ],
   imports: [
-    // NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'This item is actually loading...' }),
+    // BrowserAnimationsModule, // required animations module
+    // ToastrModule.forRoot({
+    //   positionClass: 'toast-bottom-center',
+    // }),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

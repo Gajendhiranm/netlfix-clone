@@ -13,7 +13,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(value : any){
-    console.log(value);
+    if(value.email.length <=0 && value.password.length <= 0){
+      
+    }
+    
     this.route.navigate(['/home']);
    
   }

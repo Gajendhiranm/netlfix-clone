@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+
+<div class="d-flex flex-wrap  ">
+  <div class="img-div">
+    <img
+      src="{{ basicUrl }}{{ this.results?.backdrop_path }}"
+      alt=""
+      height="500"
+    />
+  </div>
+
+  <div class="movie-detail">
+    <h4 class=" text-warning p-3 m-3">{{ this.results?.original_name }}</h4>
+    <p class=" m-3 p-3">{{ this.results?.overview }}</p>
+  </div>
+</div>

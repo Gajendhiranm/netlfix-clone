@@ -1,12 +1,37 @@
 <app-navbar></app-navbar>
 <div class="d-flex justify-content-between m-2 p-2">
-  <div>
-
-    <h5 class="ml-4 p-3 mt-3 text-white">Popular on Netflix</h5>
+  <div class="container">
+    <h5 class="ml-4 p-3 mt-3 text-dark container">Popular on Netflix</h5>
   </div>
+
   
-<div class="d-flex  arrow">
+</div>
+
+<ul class="d-flex container trending-scroll">
+  <div class="d-flex justify-content-between wrapper">
+    <li *ngFor="let r of results" class="movie-list">
+      <div class="m-2 p-2">
+        <img
+          src="{{ image_url }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+          (click)="getId(r.id)"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.name }}</h6>
+      </div>
+    </li>
+  </div>
+</ul>
+
+<!--Action Movies-->
+
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
   <div>
+    <h1 class="text-dark">Action Movies</h1>
+    <h6 class="text-dark">Action movies that available in netflix</h6>
+  </div>
+  <div class="icons">
     <img
       src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
       height="55"
@@ -14,8 +39,7 @@
       class="sliderArrow left"
       (click)="handleclick('left')"
     />
-  </div>
-  <div>
+
     <img
       src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
       height="55"
@@ -25,72 +49,150 @@
     />
   </div>
 </div>
-</div>
 
-
-<ul class="d-flex container-fluid">
+<ul class="d-flex container trending-scroll">
   <div class="d-flex justify-content-between wrapper">
-    <li *ngFor="let r of results" class="movie-list">
-      <div class="m-2 p-2" >
+    <li *ngFor="let r of actionResults" class="movie-list">
+      <div class="m-2 p-2">
         <img
           src="{{ image_url }}{{ r.poster_path }}"
           alt=""
           height="300"
           width="200"
         />
-        <h6 class="text-center mt-2 text-white">{{ r.name }}</h6>
+        <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
       </div>
-    </li>  
+    </li>
   </div>
 </ul>
- 
-  
+
 
 
 
 <!--Action Movies-->
 
-
 <div class="container d-flex flex-wrap mt-5 justify-content-between">
   <div>
-     <h1 class="text-white">Action Movies</h1>
-     <h6 class="text-white">Action movies that available in netflix</h6>
+    <h1 class="text-dark"> Horror Movies</h1>
+    <h6 class="text-dark">Horror movies that available in netflix</h6>
   </div>
-<div class="icons">
-  
-  <img
-  src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
-  height="55"
-  width="55"
-  class="sliderArrow left"
-  (click)="handleclick('left')"
-/>
+  <div class="icons">
+    <img
+      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      height="55"
+      width="55"
+      class="sliderArrow left"
+      (click)="handleclick('left')"
+    />
 
-<img
+    <img
       src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
       height="55"
       width="55"
       class="sliderArrow right"
       (click)="handleclick('right')"
-    /> 
-    
+    />
+  </div>
 </div>
+
+<ul class="d-flex container trending-scroll ">
+  <div class="d-flex justify-content-between wrapper">
+    <li *ngFor="let r of  horrorResults" class="movie-list">
+      <div class="m-2 p-2">
+        <img
+          src="{{ image_url }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.original_title}}</h6>
+      </div>
+    </li>
+  </div>
+</ul>
+
+
+<!--Action Movies-->
+
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
+  <div>
+    <h1 class="text-dark">Comedy Movies</h1>
+    <h6 class="text-dark">Comedy movies that available in netflix</h6>
+  </div>
+  <div class="icons">
+    <img
+      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      height="55"
+      width="55"
+      class="sliderArrow left"
+      (click)="handleclick('left')"
+    />
+
+    <img
+      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      height="55"
+      width="55"
+      class="sliderArrow right"
+      (click)="handleclick('right')"
+    />
+  </div>
 </div>
 
-  <ul class="d-flex container">
-    <div class="d-flex justify-content-between wrapper">
-      <li *ngFor="let r of actionResults" class="movie-list">
-        <div class="m-2 p-2" >
-          <img
-            src="{{ image_url }}{{ r.poster_path }}"
-            alt=""
-            height="300"
-            width="200"
-          />
-          <h6 class="text-center mt-2 text-white">{{ r.name }}</h6>
-        </div>
-      </li>  
-    </div>
-  </ul>
+<ul class="d-flex container trending-scroll">
+  <div class="d-flex justify-content-between wrapper">
+    <li *ngFor="let r of  comedyResults" class="movie-list">
+      <div class="m-2 p-2">
+        <img
+          src="{{ image_url }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
+      </div>
+    </li>
+  </div>
+</ul>
 
 
+
+<!--Romantic movies-->
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
+  <div>
+    <h1 class="text-dark">Romantic Movies</h1>
+    <h6 class="text-dark">Action movies that available in netflix</h6>
+  </div>
+  <div class="icons">
+    <img
+      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      height="55"
+      width="55"
+      class="sliderArrow left"
+      (click)="handleclick('left')"
+    />
+
+    <img
+      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      height="55"
+      width="55"
+      class="sliderArrow right"
+      (click)="handleclick('right')"
+    />
+  </div>
+</div>
+
+<ul class="d-flex container trending-scroll">
+  <div class="d-flex justify-content-between wrapper">
+    <li *ngFor="let r of  romanticResults" class="movie-list">
+      <div class="m-2 p-2">
+        <img
+          src="{{ image_url }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
+      </div>
+    </li>
+  </div>
+</ul>
