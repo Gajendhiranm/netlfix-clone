@@ -33,6 +33,11 @@ export class HomeDataService {
     );
   };
 
+  documentaries = () => {
+    return this.http.get<any>(
+      'https://api.themoviedb.org/3/discover/movie?api_key=0fc36919fff2603ac5d92fb95863f537&with_genres=99'
+    );
+  };
   ActionMovies = () => {
     return this.http.get<any>(
       'https://api.themoviedb.org/3/discover/movie?api_key=0fc36919fff2603ac5d92fb95863f537&with_genres=28'
