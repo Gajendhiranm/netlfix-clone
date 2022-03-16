@@ -1,15 +1,26 @@
 <app-navbar></app-navbar>
 <div class="d-flex justify-content-between m-2 p-2">
   <div class="container">
-    <h5 class="ml-4 p-3 mt-3 text-dark container">Popular on Netflix</h5>
+    <h2 class="ml-1 p-3 mt-3 text-dark container text-highlight">Popular on Netflix</h2>
+    <p class="ml-3">Popular evergreen trending series available at only Rs.100/month</p>
   </div>
 
   
 </div>
 
+
+
+
+
+
 <ul class="d-flex container trending-scroll">
   <div class="d-flex justify-content-between wrapper">
     <li *ngFor="let r of results" class="movie-list">
+      <ngx-skeleton-loader
+count="1"
+animation="progress"
+>
+</ngx-skeleton-loader>
       <div class="m-2 p-2">
         <img
           src="{{ image_url }}{{ r.poster_path }}"
@@ -33,18 +44,18 @@
   </div>
   <div class="icons">
     <img
-      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      src="../../assets/arrow.png"
       height="55"
       width="55"
-      class="sliderArrow left"
+      class="sliderArrow left mr-2"
       (click)="handleclick('left')"
     />
 
     <img
-      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      src="../../assets/arrow.png"
       height="55"
       width="55"
-      class="sliderArrow right"
+      class="sliderArrow right "
       (click)="handleclick('right')"
     />
   </div>
@@ -59,6 +70,7 @@
           alt=""
           height="300"
           width="200"
+          (click)="getMovieId(r.id)"
         />
         <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
       </div>
@@ -78,15 +90,15 @@
   </div>
   <div class="icons">
     <img
-      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      src="../../assets/arrow.png"
       height="55"
       width="55"
-      class="sliderArrow left"
+      class="sliderArrow left mr-2"
       (click)="handleclick('left')"
     />
 
     <img
-      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      src="../../assets/arrow.png"
       height="55"
       width="55"
       class="sliderArrow right"
@@ -121,15 +133,15 @@
   </div>
   <div class="icons">
     <img
-      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      src="../../assets/arrow.png"
       height="55"
       width="55"
-      class="sliderArrow left"
+      class="sliderArrow left mr-2"
       (click)="handleclick('left')"
     />
 
     <img
-      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      src="../../assets/arrow.png"
       height="55"
       width="55"
       class="sliderArrow right"
@@ -164,15 +176,15 @@
   </div>
   <div class="icons">
     <img
-      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      src="../../assets/arrow.png"
       height="55"
       width="55"
-      class="sliderArrow left"
+      class="sliderArrow left mr-2"
       (click)="handleclick('left')"
     />
 
     <img
-      src="https://cdn-icons.flaticon.com/png/512/3357/premium/3357628.png?token=exp=1646817810~hmac=3ad6d3fb4d89f350b1f296e4607a953a"
+      src="../../assets/arrow.png"
       height="55"
       width="55"
       class="sliderArrow right"
@@ -184,6 +196,48 @@
 <ul class="d-flex container trending-scroll">
   <div class="d-flex justify-content-between wrapper">
     <li *ngFor="let r of  romanticResults" class="movie-list">
+      <div class="m-2 p-2">
+        <img
+          src="{{ image_url }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
+      </div>
+    </li>
+  </div>
+</ul>
+
+
+<!--documetaries-->
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
+  <div>
+    <h1 class="text-dark">Documentaries</h1>
+    <h6 class="text-dark">Action movies that available in netflix</h6>
+  </div>
+  <div class="icons">
+    <img
+      src="../../assets/arrow.png"
+      height="55"
+      width="55"
+      class="sliderArrow left mr-2"
+      (click)="handleclick('left')"
+    />
+
+    <img
+      src="../../assets/arrow.png"
+      height="55"
+      width="55"
+      class="sliderArrow right"
+      (click)="handleclick('right')"
+    />
+  </div>
+</div>
+
+<ul class="d-flex container trending-scroll">
+  <div class="d-flex justify-content-between wrapper">
+    <li *ngFor="let r of documentaries" class="movie-list">
       <div class="m-2 p-2">
         <img
           src="{{ image_url }}{{ r.poster_path }}"

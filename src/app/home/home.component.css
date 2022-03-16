@@ -58,3 +58,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #DBDBDB; 
 }
+.right{
+    transform: rotate(180deg) !important;
+}
+.text-highlight{
+    color: #DE0914 !important;
+}

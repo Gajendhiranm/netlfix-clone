@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomeDataService {
   results: any = [];
   id: Number = 0;
+  movieId : Number = 0;
   constructor(private http: HttpClient) {}
 
   PopularData = () => {
@@ -14,8 +15,8 @@ export class HomeDataService {
       'https://api.themoviedb.org/3/discover/tv?api_key=0fc36919fff2603ac5d92fb95863f537'
     );
   };
-  //export const ComedyMovie = `/discover/movie?api_key=${API_KEY}&with_genres=35`
-  //export const HorrorMovie = `/discover/movie?api_key=${API_KEY}&with_genres=27`
+  
+
   comedyMovies = () => {
     return this.http.get<any>(
       'https://api.themoviedb.org/3/discover/movie?api_key=0fc36919fff2603ac5d92fb95863f537&with_genres=35'
@@ -50,6 +51,15 @@ export class HomeDataService {
     );
   };
 
+  movie = (e: any) => {
+    this.movieId = e;
+    console.log(this.movieId);
+    return this.http.get<any>(
+      `https://api.themoviedb.org/3/movie/${this.movieId}?api_key=0fc36919fff2603ac5d92fb95863f537`
+    );
+  }
+
+
   detailMovie = (e: any) => {
     this.id = e;
     console.log(this.id);
@@ -57,4 +67,23 @@ export class HomeDataService {
       `https://api.themoviedb.org/3/tv/${this.id}?api_key=0fc36919fff2603ac5d92fb95863f537`
     );
   };
+
+
+//https://api.themoviedb.org/3/tv/{tv_id}/videos?api_key=<<api_key>>&language=en-US
+
+getVideo = (e : any) => {
+  this.id = e;
+  return this.http.get<any>(
+    `https://api.themoviedb.org/3/tv/${this.id}/videos?api_key=0fc36919fff2603ac5d92fb95863f537`
+  );
+}
+
+
+ credits = (e: any) => {
+      this.id = e;
+      return this.http.get<any>(
+        `https://api.themoviedb.org/3/tv/${this.id}/aggregate_credits?api_key=0fc36919fff2603ac5d92fb95863f537`
+      );
+ }
+
 }

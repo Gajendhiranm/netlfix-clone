@@ -9,12 +9,25 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MoviedetailsComponent implements OnInit {
   results: any = [];
-  basicUrl = 'https://image.tmdb.org/t/p/original/';
+  basicUrl = 'https://image.tmdb.org/t/p/original';
   id: Number = 0;
+  credits : any = [];
   constructor(private homeData : HomeDataService,private route : ActivatedRoute) { }
 
 
-  
+  getCast = () => {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.homeData.credits(this.id)
+      .subscribe((response : any) => {
+        this.credits = response['cast'];
+        console.log("credits",this.credits);
+        
+
+      });
+      
+  }); 
+  }
 
   ngOnInit(): void {
      this.route.params.subscribe(params => {
@@ -22,12 +35,13 @@ export class MoviedetailsComponent implements OnInit {
       this.homeData.detailMovie(this.id)
       .subscribe((response : any) => {
         this.results = response;
+        
         console.log("Particular Movie",this.results);
 
       });
       
   });  
-  
+  this.getCast();
       
   }
 

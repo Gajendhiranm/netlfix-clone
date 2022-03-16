@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DetailsComponent } from './details/details.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
@@ -35,6 +36,11 @@ const routes: Routes = [
   {
     path: ':id',
     component: MoviedetailsComponent,
+  },
+  {
+
+    path: 'movies/:id',
+    component: DetailsComponent,
   },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];

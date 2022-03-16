@@ -12,9 +12,10 @@ import { TrendingComponent } from './trending/trending.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetailsComponent } from './details/details.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { GraphQLModule } from './graphql.module';
 
-//  import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,16 +27,15 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
     FavoritesComponent,
     NavbarComponent,
     MoviedetailsComponent,
+    DetailsComponent,
   ],
   imports: [
-    // BrowserAnimationsModule, // required animations module
-    // ToastrModule.forRoot({
-    //   positionClass: 'toast-bottom-center',
-    // }),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxSkeletonLoaderModule,
+    GraphQLModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
