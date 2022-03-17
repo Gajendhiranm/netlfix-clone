@@ -15,6 +15,7 @@ import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import { DetailsComponent } from './details/details.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { GraphQLModule } from './graphql.module';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { GraphQLModule } from './graphql.module';
     NavbarComponent,
     MoviedetailsComponent,
     DetailsComponent,
+    CarouselComponent,
   ],
   imports: [
     BrowserModule,

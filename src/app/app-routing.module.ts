@@ -42,6 +42,11 @@ const routes: Routes = [
     path: 'movies/:id',
     component: DetailsComponent,
   },
+  {
+    
+    path: 'series/:id',
+    component:MoviedetailsComponent,
+  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 

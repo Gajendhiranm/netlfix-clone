@@ -1,2 +1,44 @@
 <app-navbar></app-navbar>
-<h1 class="text-dark">series works</h1>
+<app-carousel></app-carousel>
+
+
+<div class="container d-flex flex-wrap mt-5 justify-content-between">
+    <div>
+      <h1 class="text-dark"> Evergreen Series</h1>
+      <h6 class="text-dark">Horror movies that available in netflix</h6>
+    </div>
+    <div class="icons">
+      <img
+        src="../../assets/arrow.png"
+        height="55"
+        width="55"
+        class="sliderArrow left mr-2"
+        (click)="handleclick('left')"
+      />
+  
+      <img
+        src="../../assets/arrow.png"
+        height="55"
+        width="55"
+        class="sliderArrow right"
+        (click)="handleclick('right')"
+      />
+    </div>
+
+<ul class="d-flex container trending-scroll">
+  <div class="d-flex flex-wrap justify-content-between wrapper">
+    <li *ngFor="let r of seriesResults" class="movie-list">
+    
+      <div class="m-1 p-1">
+        <img
+          src="{{   basicUrl }}{{ r.poster_path }}"
+          alt=""
+          height="300"
+          width="200"
+           (click)="getId(r.id)"
+        />
+        <h6 class="text-center mt-2 text-dark">{{ r.name }}</h6>
+      </div>
+    </li>
+  </div>
+</ul>

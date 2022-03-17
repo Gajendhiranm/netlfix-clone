@@ -8,6 +8,7 @@ export class HomeDataService {
   results: any = [];
   id: Number = 0;
   movieId : Number = 0;
+  pageNo : Number = 0;
   constructor(private http: HttpClient) {}
 
   PopularData = () => {
@@ -16,12 +17,30 @@ export class HomeDataService {
     );
   };
   
+   trendingAllData  = () => {
+   return this.http.get<any>(
+     'https://api.themoviedb.org/3/trending/all/day?api_key=0fc36919fff2603ac5d92fb95863f537'
+   );
+   }
 
+   
   comedyMovies = () => {
     return this.http.get<any>(
       'https://api.themoviedb.org/3/discover/movie?api_key=0fc36919fff2603ac5d92fb95863f537&with_genres=35'
     );
   };
+
+
+  
+ seriesAtpage = (e: any) => {
+   this.pageNo = e;
+  return this.http.get<any>(
+    `https://api.themoviedb.org/3/tv/popular?api_key=0fc36919fff2603ac5d92fb95863f537&language=en-US&page=${this.pageNo}`
+  );
+ }
+
+
+
   HorrorMovies = () => {
     return this.http.get<any>(
       'https://api.themoviedb.org/3/discover/movie?api_key=0fc36919fff2603ac5d92fb95863f537&with_genres=27'

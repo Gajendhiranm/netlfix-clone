@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   };
 
   getActionMovies = () => {
-    this.homeData.ActionMovies().subscribe((response) => {
+    this.homeData.trendingAllData().subscribe((response) => {
       this.actionResults = response.results;
     });
   };

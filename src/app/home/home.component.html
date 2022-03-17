@@ -1,4 +1,17 @@
 <app-navbar></app-navbar>
+
+
+
+
+
+<app-carousel></app-carousel>
+
+
+
+
+
+
+
 <div class="d-flex justify-content-between m-2 p-2">
   <div class="container">
     <h2 class="ml-1 p-3 mt-3 text-dark container text-highlight">Popular on Netflix</h2>
@@ -16,11 +29,11 @@
 <ul class="d-flex container trending-scroll">
   <div class="d-flex justify-content-between wrapper">
     <li *ngFor="let r of results" class="movie-list">
-      <ngx-skeleton-loader
+      <!-- <ngx-skeleton-loader
 count="1"
 animation="progress"
 >
-</ngx-skeleton-loader>
+</ngx-skeleton-loader> -->
       <div class="m-2 p-2">
         <img
           src="{{ image_url }}{{ r.poster_path }}"
@@ -39,7 +52,7 @@ animation="progress"
 
 <div class="container d-flex flex-wrap mt-5 justify-content-between">
   <div>
-    <h1 class="text-dark">Action Movies</h1>
+    <h2 class="text-dark text-highlight">Trending in the last week</h2>
     <h6 class="text-dark">Action movies that available in netflix</h6>
   </div>
   <div class="icons">
@@ -116,6 +129,7 @@ animation="progress"
           alt=""
           height="300"
           width="200"
+          (click)="getMovieId(r.id)"
         />
         <h6 class="text-center mt-2 text-dark">{{ r.original_title}}</h6>
       </div>
@@ -159,6 +173,7 @@ animation="progress"
           alt=""
           height="300"
           width="200"
+          (click)="getMovieId(r.id)"
         />
         <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
       </div>
@@ -202,6 +217,7 @@ animation="progress"
           alt=""
           height="300"
           width="200"
+          (click)="getMovieId(r.id)"
         />
         <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
       </div>
@@ -244,6 +260,7 @@ animation="progress"
           alt=""
           height="300"
           width="200"
+          (click)="getMovieId(r.id)"
         />
         <h6 class="text-center mt-2 text-dark">{{ r.original_title }}</h6>
       </div>

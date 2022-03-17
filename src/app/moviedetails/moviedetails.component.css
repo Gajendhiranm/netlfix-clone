@@ -30,6 +30,7 @@ color: #F40612;
 
 ::-webkit-scrollbar { width: 1px;
     height: 7px;
+    width: 30px;
 }
 
 ::-webkit-scrollbar-track {
