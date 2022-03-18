@@ -96,7 +96,13 @@ getVideo = (e : any) => {
     `https://api.themoviedb.org/3/tv/${this.id}/videos?api_key=0fc36919fff2603ac5d92fb95863f537`
   );
 }
-
+//https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=<<api_key>>&language=en-US
+getMovieVideo = (e : any) => {
+  this.id = e;
+  return this.http.get<any>(
+    `https://api.themoviedb.org/3/movie/${this.id}/videos?api_key=0fc36919fff2603ac5d92fb95863f537&language=en-US`
+  );
+}
 
  credits = (e: any) => {
       this.id = e;
@@ -104,5 +110,11 @@ getVideo = (e : any) => {
         `https://api.themoviedb.org/3/tv/${this.id}/aggregate_credits?api_key=0fc36919fff2603ac5d92fb95863f537`
       );
  }
+ Moviecredits = (e: any) => {
+  this.id = e;
+  return this.http.get<any>(
+    `https://api.themoviedb.org/3/movie/${this.id}/credits?api_key=0fc36919fff2603ac5d92fb95863f537&language=en-US`
+  );
+}
 
 }
